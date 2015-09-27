@@ -21,6 +21,7 @@ You must have library DB in your DB driver
 If library DB exits run shell comands from dest_folder:
 
 php artisan migrate
+
 php artisan db:seed
 
 ### License
