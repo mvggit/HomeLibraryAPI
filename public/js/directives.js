@@ -76,8 +76,13 @@ Library.directive('upload', function($rootScope){
             var f = document.getElementById('cover').files[0];
                 r = new FileReader();
             var aborted = false;
-            
-                if (/[а-яА-Я]/.test(f.name))
+                
+                if((f.name.indexOf('.jpg') === -1 &&
+                    f.name.indexOf('.jpeg') === -1 &&
+                    f.name.indexOf('.png') === -1 &&
+                    f.name.indexOf('.gif') === -1) ||
+                    /[а-яА-Я]/.test(f.name)
+                )
                 {
                     $scope.$apply(function(){
                         $scope.$uploaderror = true;
