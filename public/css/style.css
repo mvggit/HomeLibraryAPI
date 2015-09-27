@@ -1,0 +1,107 @@
+/* 
+    Created on : 23.09.2015, 15:44:27
+    Author     : Максим
+*/
+
+.container {
+    z-index: 1;
+}
+
+.frozen {
+    position: absolute;
+    
+    width: 100%;
+    height: 100%;
+    
+    background: #eee url('../images/preloader.GIF') center center no-repeat;
+    opacity: 0.3;
+    
+    z-index: 999;
+}
+
+ul.nav, ul.nav li {
+    list-style: none;
+    display: inline
+}
+
+img {
+    width: 96%;
+    height: 96%;
+    margin: 2%;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+.voffset {
+    margin: 15px auto 7px auto;
+}
+
+.search_by {
+    width: 60%;
+    margin: 7% 10px;
+}
+
+.form-row {
+    margin: 1% auto;
+}
+
+ul.pagination, li.pagination {
+    list-style: none;
+    display: inline;
+    padding:0;
+    margin: 0;
+}
+
+ul.sort {
+    display: inline;
+}
+
+li.sort {
+    display: inline;
+    list-style: none;
+}
+
+li.pagination {
+    margin-left: 2px;
+}
+
+li.sort span {
+    margin: 0;
+    padding: 0;
+    max-width: 150px;
+}
+
+li.pagination button{
+    padding: 5px;
+}
+
+.pagination {
+    background-color: #fff;
+    text-align: center;
+}
+
+.pagination.active {
+    color: #00f;
+    text-decoration: underline;
+}
+
+.link {
+    color: #00f;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.form-error {
+    font-size: 13px;
+    line-height: 17px;
+    
+    color: #f00;
+    
+    padding: 0;
+    margin: 5px auto;
+}
+
+.has-error input {
+    border-color: #f00;
+}
