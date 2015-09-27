@@ -79,9 +79,6 @@
             <div class="col-md-12 small">
                 ISBN @{{book.ISBN}}
             </div>
-            <div class="col-md-12 voffset hr">
-                @{{book.description}}
-            </div>
             <div class="col-md-11 col-md-offset-1 voffset">
                 <input type="button" go-to-page page="book" items="_book" ids="@{{$index}}" class="btn btn-primary pull-left" value="Подробнее">
             </div>
@@ -214,8 +211,11 @@
                     <div class="col-md-3" ng-if="editbook.img">
                         <img ng-src="@{{editbook.img}}" id="coverPreview" alt="@{{_book.description}}">
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4" ng-class="{ 'has-error' : $uploaderror}">
                         <input upload id="cover" type="file" class="form-control" value="Загрузить">
+                        <p class="form-error" ng-show="$uploaderror">
+                            {{trans('app.add-form.error.upload')}}
+                        </p>
                     </div>
                 </div>
                 <div class="col-md-12 form-row">

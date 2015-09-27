@@ -33,6 +33,7 @@ return [
             'author' => 'Author is to long',
             'ISBN' => 'ISBN is to long',
             'description' => 'Description  is to long',
+            'upload' => 'File 512 Kb max or use cyrilyc filename',
             'error' => 'Error saved data. Please check form data.',
         ],
     ],

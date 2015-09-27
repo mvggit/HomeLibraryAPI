@@ -64,7 +64,7 @@ class Books extends BaseModel
      */
     public static function bookList($page, $order = 'id')
     {
-        $pagination = 2;
+        $pagination = 12;
         
         if (!count(self::select('id')
                             ->skip(($page - 1) * $pagination)

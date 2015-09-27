@@ -75,14 +75,39 @@ Library.directive('upload', function($rootScope){
             element.bind('change', function() {
             var f = document.getElementById('cover').files[0];
                 r = new FileReader();
+            var aborted = false;
+            
+                if (/[а-яА-Я]/.test(f.name))
+                {
+                    $scope.$apply(function(){
+                        $scope.$uploaderror = true;
+                    });
+                    f = '';
+                }
+            
+                r.onprogress = function(e) {
+                    if (e.total > 512000)
+                    {
+                        r.abort();
+                        aborted = true;
+                        $scope.$uploaderror = true;
+                    }
+                };
                 r.onloadend = function (e) {
                     $scope.$apply(function(){
-                        $scope.$root.editbook.img = e.target.result;
-                        $scope.$root.editbook.cover = f.name;
-                        $rootScope._frozen = false;                        
+                        if (!aborted)
+                        {
+                            $scope.$uploaderror = false;
+                            $scope.$root.editbook.img = e.target.result;
+                            $scope.$root.editbook.cover = f.name;
+                            $rootScope._frozen = false;                        
+                        }
                     })
                 }
-                r.readAsDataURL(f);
+                if (f)
+                {
+                    r.readAsDataURL(f);
+                }
             }
         )}
     }

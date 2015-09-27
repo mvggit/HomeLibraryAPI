@@ -66,6 +66,7 @@ Library.controller('catalog', function ($rootScope, $scope) {
 Library.controller('edit', function ($rootScope, $scope, httpApp) {
     $scope.pages = $rootScope.page;
     $scope.$error = true;
+    $scope.$uploaderror = false;
     $scope.submit = function() {
         $rootScope._frozen = true;
     var search = httpApp.put('book', $rootScope.editbook);
